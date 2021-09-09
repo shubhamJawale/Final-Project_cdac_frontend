@@ -11,7 +11,7 @@ export default function ShowContractorsbypinl() {
     let [userdata, setuserdata] = useState({});
     let [usercontractorlist, setusercontractorlist] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         //console.log(user.role);
         if (user === null) {
             history.replace("/");
@@ -46,7 +46,7 @@ export default function ShowContractorsbypinl() {
 
     let sendRequest = (e) => {
         console.log("e=>" + e);
-        sessionStorage.setItem("TempContId", e);
+        localStorage.setItem("TempContId", e);
         history.push("/labour/requestForm");
 
 

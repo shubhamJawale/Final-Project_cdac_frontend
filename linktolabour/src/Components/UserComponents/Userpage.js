@@ -27,13 +27,13 @@ function Userpage() {
     const history1 = useHistory();
     let [userdata, setuserdata] = useState();
     useEffect(() => {
-        if (sessionStorage.getItem("udata") == null) {
+        if (localStorage.getItem("udata") == null) {
 
             history1.replace("/")
 
         } else {
 
-            let user = JSON.parse(sessionStorage.getItem("udata"));
+            let user = JSON.parse(localStorage.getItem("udata"));
             //console.log(user.role);
             if (user === null) {
                 history1.replace("/");
@@ -47,7 +47,7 @@ function Userpage() {
     }, []);
 
     let Logout = () => {
-        sessionStorage.clear();
+        localStorage.clear();
         history1.replace("/");
         Swal.fire({ title: "Successfully logged Out", icon: 'success' });
 
@@ -55,8 +55,8 @@ function Userpage() {
     }
     let name;
     let role;
-    if (sessionStorage.getItem("udata") !== null) {
-        let l = JSON.parse(sessionStorage.getItem("udata"));
+    if (localStorage.getItem("udata") !== null) {
+        let l = JSON.parse(localStorage.getItem("udata"));
         name = l.userName;
         role = l.role;
     }

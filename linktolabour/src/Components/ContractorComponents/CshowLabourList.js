@@ -12,7 +12,7 @@ export default function ShowLaboursListForContractor() {
     let [userdata, setuserdata] = useState({});
     let [usercontractorlist, setusercontractorlist] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         console.log(user.userId);
 
         if (user === null) {
@@ -22,7 +22,7 @@ export default function ShowLaboursListForContractor() {
             setuserdata(user);
 
         }
-        let cont = JSON.parse(sessionStorage.getItem("logCdata"));
+        let cont = JSON.parse(localStorage.getItem("logCdata"));
         let cid = cont.contractorId;
         getAllLabours(cid);
 
@@ -48,7 +48,7 @@ export default function ShowLaboursListForContractor() {
 
     let updatelabour = (e) => {
 
-        sessionStorage.setItem("tempuid", e);
+        localStorage.setItem("tempuid", e);
         history.replace("/contractor/updateLabour");
 
     }

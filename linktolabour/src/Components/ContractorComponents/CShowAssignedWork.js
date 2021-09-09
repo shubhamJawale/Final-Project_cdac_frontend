@@ -14,7 +14,7 @@ export default function AssignedWorkListForContractor() {
     let [assignworklist, setassignworklist] = useState([{}]);
     useEffect(() => {
 
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         console.log(user.userId);
 
         setuserdata(user);
@@ -25,7 +25,7 @@ export default function AssignedWorkListForContractor() {
 
 
         }
-        let cont = JSON.parse(sessionStorage.getItem("logCdata"));
+        let cont = JSON.parse(localStorage.getItem("logCdata"));
         let cid = cont.contractorId;
         getAssignedWorks(cid);
 

@@ -28,16 +28,16 @@ function Labourpage() {
     let [userdata, setuserdata] = useState();
 
     useEffect(() => {
-        let l = JSON.parse(sessionStorage.getItem("logId"));
+        let l = JSON.parse(localStorage.getItem("logId"));
 
         axios.get(`${baseurl}/user/getLabourByUSerId/${l}`).then((response) => {
             console.log(response.data);
             let ldata = JSON.stringify(response.data);
-            sessionStorage.setItem("logLdata", ldata);
+            localStorage.setItem("logLdata", ldata);
         }, (error) => { })
 
 
-        let user = JSON.parse(sessionStorage.getItem('udata'));
+        let user = JSON.parse(localStorage.getItem('udata'));
         if (user === null) {
             history1.replace("/");
         } else if (user.role != 'LABOUR') {
@@ -56,7 +56,7 @@ function Labourpage() {
     }
 
     let Logout = () => {
-        sessionStorage.clear();
+        localStorage.clear();
         history1.replace("/");
         Swal.fire({ title: "Successfully logged Out", icon: 'success' });
 
@@ -64,9 +64,9 @@ function Labourpage() {
     }
     let name;
     let role;
-    if (sessionStorage.getItem("udata") !== null) {
+    if (localStorage.getItem("udata") !== null) {
 
-        let l = JSON.parse(sessionStorage.getItem("udata"));
+        let l = JSON.parse(localStorage.getItem("udata"));
         name = l.userName;
         role = l.role;
     }

@@ -1,6 +1,6 @@
 /** let updatelabour = (e) => {
             console.log(e);
-            let l = JSON.parse(sessionStorage.getItem("logLdata"));
+            let l = JSON.parse(localStorage.getItem("logLdata"));
             let lid = l.labourId;
             Swal.fire({
                 title: 'Are you sure? ',
@@ -44,7 +44,7 @@ export default function RequestForm() {
     let [assignworklist, setassignworklist] = useState([{}]);
     useEffect(() => {
 
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         console.log(user.userId);
 
         setuserdata(user);
@@ -98,8 +98,8 @@ export default function RequestForm() {
 
 
     let sendRequest = (r) => {
-        let e = JSON.parse(sessionStorage.getItem("TempContId"));
-        let l = JSON.parse(sessionStorage.getItem("logLdata"));
+        let e = JSON.parse(localStorage.getItem("TempContId"));
+        let l = JSON.parse(localStorage.getItem("logLdata"));
         let lid = l.labourId;
         Swal.fire({
             title: 'Are you sure? ',
@@ -114,7 +114,7 @@ export default function RequestForm() {
 
                 axios.post(`${baseurl}/labour/sendRequest/${lid}/${e}`, r).then((response) => {
                     console.log(lid);
-                    sessionStorage.removeItem("TempContId");
+                    localStorage.removeItem("TempContId");
 
 
                 }, (error) => { console.log(error) })

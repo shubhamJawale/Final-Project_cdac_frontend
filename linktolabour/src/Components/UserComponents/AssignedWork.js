@@ -14,7 +14,7 @@ export default function AssignedWork() {
     let [assignworklist, setassignworklist] = useState([{}]);
     useEffect(() => {
 
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         console.log(user.userId);
 
         setuserdata(user);
@@ -59,7 +59,7 @@ export default function AssignedWork() {
 
         }
 
-        sessionStorage.setItem("reviewItem", JSON.stringify(reviewItem));
+        localStorage.setItem("reviewItem", JSON.stringify(reviewItem));
 
 
         // console.log(e, cid, lid, uid);

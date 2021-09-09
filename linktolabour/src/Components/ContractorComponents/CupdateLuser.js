@@ -18,7 +18,7 @@ export default function UpdateCLabour() {
     let [userdata, setuserdata] = useState({});
     let [usercontractorlist, setusercontractorlist] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         //console.log(user.role);
         setrole(user.role);
         if (user === null) {
@@ -48,7 +48,7 @@ export default function UpdateCLabour() {
     let [role, setrole] = useState();
     let getuser = () => {
 
-        let userId = JSON.parse(sessionStorage.getItem("tempuid"));
+        let userId = JSON.parse(localStorage.getItem("tempuid"));
 
         axios.get(`${baseurl}/user/getUserbyUid/${userId}`).then((response) => {
             console.log(response.data);
@@ -88,7 +88,7 @@ export default function UpdateCLabour() {
     const pincodeRgx = /^[0-9\s]{6}$/;
     //axios
     let register = () => {
-        let userId = JSON.parse(sessionStorage.getItem("tempuid"));
+        let userId = JSON.parse(localStorage.getItem("tempuid"));
         console.log(userId);
         let user = {
             userId: userId,
@@ -108,7 +108,7 @@ export default function UpdateCLabour() {
                 Swal.fire({ title: "Labour Upadeted", icon: "success" });
 
                 console.log(response.status);
-                sessionStorage.removeItem("tempuid");
+                localStorage.removeItem("tempuid");
                 history.push("/contractor");
             },
             (error) => {

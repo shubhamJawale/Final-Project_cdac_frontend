@@ -18,7 +18,7 @@ export default function UpdateUser() {
     let [userdata, setuserdata] = useState({});
     let [usercontractorlist, setusercontractorlist] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         //console.log(user.role);
         setrole(user.role);
         if (user === null) {
@@ -48,7 +48,7 @@ export default function UpdateUser() {
     let [role, setrole] = useState();
     let getuser = () => {
 
-        let userId = JSON.parse(sessionStorage.getItem("logId"));
+        let userId = JSON.parse(localStorage.getItem("logId"));
 
         axios.get(`${baseurl}/user/getUserbyUid/${userId}`).then((response) => {
             console.log(response.data);
@@ -88,7 +88,7 @@ export default function UpdateUser() {
     const pincodeRgx = /^[0-9\s]{6}$/;
     //axios
     let register = () => {
-        let userId = JSON.parse(sessionStorage.getItem("logId"));
+        let userId = JSON.parse(localStorage.getItem("logId"));
         let user = {
             userId: userId,
             userName: username,

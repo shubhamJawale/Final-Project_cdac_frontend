@@ -11,7 +11,7 @@ export default function ShowContractorsprof() {
     let [userdata, setuserdata] = useState({});
     let [entity, setentity] = useState({});
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         //console.log(user.role);
         if (user === null) {
             history.replace("/");
@@ -20,7 +20,7 @@ export default function ShowContractorsprof() {
             setuserdata(user);
         }
 
-        let l = JSON.parse(sessionStorage.getItem("logLdata"));
+        let l = JSON.parse(localStorage.getItem("logLdata"));
         let cid = l.contractorId;
         getContractors(cid);
 

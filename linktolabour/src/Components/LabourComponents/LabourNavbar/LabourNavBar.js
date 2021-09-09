@@ -9,12 +9,12 @@ export default function LabourNavbar() {
     let [i, seti] = useState();
     useEffect(() => {
         if (
-            sessionStorage.length === 0 ||
-            sessionStorage.getItem("logLdata") === null
+            localStorage.length === 0 ||
+            localStorage.getItem("logLdata") === null
         ) {
             history1.replace("/labour");
         } else {
-            let l = JSON.parse(sessionStorage.getItem("logLdata"));
+            let l = JSON.parse(localStorage.getItem("logLdata"));
             let count = 0;
             if (l.contractorId != 0) {
                 count = 1;

@@ -11,8 +11,8 @@ export default function ShowBiddingByCOntractorID() {
     let [userdata, setuserdata] = useState({});
     let [usercontractorlist, setusercontractorlist] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
-        let wid = JSON.parse(sessionStorage.getItem("abworkId"));
+        let user = JSON.parse(localStorage.getItem("udata"));
+        let wid = JSON.parse(localStorage.getItem("abworkId"));
         //console.log(user.role);
         if (user === null) {
             history.replace("/");
@@ -21,7 +21,7 @@ export default function ShowBiddingByCOntractorID() {
             setuserdata(user);
         }
 
-        let cont = JSON.parse(sessionStorage.getItem("logCdata"));
+        let cont = JSON.parse(localStorage.getItem("logCdata"));
 
         getContractors(cont.contractorId);
 

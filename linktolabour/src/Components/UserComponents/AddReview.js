@@ -12,7 +12,7 @@ export default function Reviwe() {
     let [assignworklist, setassignworklist] = useState([{}]);
     useEffect(() => {
 
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         console.log(user.userId);
 
         setuserdata(user);
@@ -23,7 +23,7 @@ export default function Reviwe() {
 
 
         }
-        let reviewI = sessionStorage.getItem("reviewItem");
+        let reviewI = localStorage.getItem("reviewItem");
         let rev = JSON.parse(reviewI);
 
         return () => {
@@ -49,7 +49,7 @@ export default function Reviwe() {
     let rdescinp = (e) => setrdsc(e.target.value);
     let ratinginp = (e) => setrating(e.target.value);
     let validate = () => {
-        let reviewI = sessionStorage.getItem("reviewItem");
+        let reviewI = localStorage.getItem("reviewItem");
         let rev = JSON.parse(reviewI);
         let cid = rev.cid;
         let lid = rev.uid;
@@ -60,13 +60,13 @@ export default function Reviwe() {
         if (cid != '0') {
             axios.post(`${baseurl}/user/addreviewforcontractor/${uid}/${cid}`, review).then((response) => {
                 history.push("/user");
-                sessionStorage.removeItem("reviewItem");
+                localStorage.removeItem("reviewItem");
             }, () => { });
         } else {
 
             axios.post(`${baseurl}/user/addreviewforlabour/${uid}/${lid}`, review).then((response) => {
                 history.push("/user");
-                sessionStorage.removeItem("reviewItem");
+                localStorage.removeItem("reviewItem");
             }, () => { });
         }
 

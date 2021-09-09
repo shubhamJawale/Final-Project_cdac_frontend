@@ -45,7 +45,7 @@ export function Login() {
         }
 
         else {
-            sessionStorage.clear();
+            localStorage.clear();
             Swal.fire({ title: "Invalid Credentials", text: " Email id or Passwaord  is invalid", icon: "error" })
             setusername("");
             setpassword("");
@@ -95,9 +95,9 @@ export function Login() {
                 "address": uaddress
             }
 
-            sessionStorage.setItem("logId", uid);
+            localStorage.setItem("logId", uid);
             let stringedobj = JSON.stringify(dummyuser);
-            sessionStorage.setItem('udata', stringedobj);
+            localStorage.setItem('udata', stringedobj);
 
             console.log(urole)
             console.log(urole);
@@ -105,7 +105,7 @@ export function Login() {
                 axios.get(`${baseurl}/user/getContractorByUSerId/${uid}`).then((response) => {
                     console.log(response.data);
                     let cdata = JSON.stringify(response.data);
-                    sessionStorage.setItem("logCdata", cdata);
+                    localStorage.setItem("logCdata", cdata);
                 }, (error) => { })
             }
 
@@ -113,12 +113,12 @@ export function Login() {
                 axios.get(`${baseurl}/user/getLabourByUSerId/${uid}`).then((response) => {
                     console.log(response.data);
                     let ldata = JSON.stringify(response.data);
-                    sessionStorage.setItem("logLdata", ldata);
+                    localStorage.setItem("logLdata", ldata);
                 }, (error) => { })
             }
             RoleWiseLogIn();
         }, (error) => {
-            sessionStorage.clear();
+            localStorage.clear();
             Swal.fire({ title: "Oops", text: " user might not exists in our system", icon: "error" })
         })
 

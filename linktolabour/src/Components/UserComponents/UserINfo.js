@@ -10,7 +10,7 @@ export default function UserINfo() {
     let [userdata, setuserdata] = useState({});
     let [usercontractorlist, setusercontractorlist] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         //console.log(user.role);
         if (user === null) {
             history.replace("/");

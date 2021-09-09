@@ -10,7 +10,7 @@ export default function WorkList() {
     let [userdata, setuserdata] = useState({});
     let [usercontractorlist, setusercontractorlist] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         //console.log(user.role);
         if (user === null) {
             history.replace("/");
@@ -43,12 +43,12 @@ export default function WorkList() {
 
 
     let showBidding = (work1Id) => {
-        sessionStorage.setItem("WorkId", work1Id)
+        localStorage.setItem("WorkId", work1Id)
         axios.get(`${baseurl}/user/getWorkByWorkId/${work1Id}`).then((response) => {
 
 
             let workstore = JSON.stringify(response.data);
-            sessionStorage.setItem("Work", workstore);
+            localStorage.setItem("Work", workstore);
             history.push("/user/showbidding");
 
 

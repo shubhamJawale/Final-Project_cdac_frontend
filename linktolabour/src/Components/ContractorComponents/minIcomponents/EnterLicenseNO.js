@@ -12,7 +12,7 @@ export default function LicensnoForm() {
     let [userdata, setuserdata] = useState({});
     let [usercontractorlist, setusercontractorlist] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         //console.log(user.role);
         if (user === null) {
             history.replace("/");
@@ -51,8 +51,8 @@ export default function LicensnoForm() {
     }
     let datevalidator = Date.now();
     let submitlcno = () => {
-        let contr = JSON.parse(sessionStorage.getItem("logCdata"));
-        let users = JSON.parse(sessionStorage.getItem("udata"));
+        let contr = JSON.parse(localStorage.getItem("logCdata"));
+        let users = JSON.parse(localStorage.getItem("udata"));
         let contractor = {
             "contractorId": contr.contractorId,
             "licenceNo": licno,
@@ -65,7 +65,7 @@ export default function LicensnoForm() {
             })
 
             let cdata = JSON.stringify(contractor)
-            sessionStorage.setItem('logCdata', cdata);
+            localStorage.setItem('logCdata', cdata);
             history.push("/contractor");
         }, () => {
 

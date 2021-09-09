@@ -11,8 +11,8 @@ export default function ShowBidding() {
     let [userdata, setuserdata] = useState({});
     let [usercontractorlist, setusercontractorlist] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
-        let wid = JSON.parse(sessionStorage.getItem("WorkId"));
+        let user = JSON.parse(localStorage.getItem("udata"));
+        let wid = JSON.parse(localStorage.getItem("WorkId"));
         //console.log(user.role);
         if (user === null) {
             history.replace("/");
@@ -43,7 +43,7 @@ export default function ShowBidding() {
 
     let addtoAssignedWork = (id1) => {
         console.log(id1)
-        let worktemp = sessionStorage.getItem("Work");
+        let worktemp = localStorage.getItem("Work");
         let work = JSON.parse(worktemp);
         console.log(work);
         axios.post(`${baseurl}/user/addtoassignedwork/${id1}`, work).then((response) => { console.log("Added"); history.push("/user"); }, (error) => { console.log(error) })

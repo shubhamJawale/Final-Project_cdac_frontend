@@ -4,7 +4,7 @@ export default function Logout() {
 
 
     useEffect(() => {
-        sessionStorage.clear();
+        localStorage.clear();
 
     }, [])
     return (

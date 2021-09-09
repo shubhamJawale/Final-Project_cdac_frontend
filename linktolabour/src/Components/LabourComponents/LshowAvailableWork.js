@@ -15,7 +15,7 @@ export default function LShowAvailableWork() {
     let [assignworklist, setassignworklist] = useState([{}]);
     useEffect(() => {
 
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         console.log(user.userId);
 
         setuserdata(user);
@@ -26,7 +26,7 @@ export default function LShowAvailableWork() {
 
 
         }
-        let cont = JSON.parse(sessionStorage.getItem("logLdata"));
+        let cont = JSON.parse(localStorage.getItem("logLdata"));
         let id1 = cont.labourId;
         getAssignedWorks(id1);
 
@@ -56,7 +56,7 @@ export default function LShowAvailableWork() {
 
     let addBidding = (e) => {
         console.log(e);
-        sessionStorage.setItem('abworkId', e);
+        localStorage.setItem('abworkId', e);
 
         history.replace("/labour/addbidding");
 

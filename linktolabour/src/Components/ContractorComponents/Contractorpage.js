@@ -25,12 +25,12 @@ function Contractorpage() {
     let [userdata, setuserdata] = useState();
 
     useEffect(() => {
-        if ((sessionStorage.length === 0) || sessionStorage.getItem("logCdata") === null) {
+        if ((localStorage.length === 0) || localStorage.getItem("logCdata") === null) {
             history1.replace("/");
         } else {
 
-            let user = JSON.parse(sessionStorage.getItem('udata'));
-            let Cdata = JSON.parse(sessionStorage.getItem('logCdata'));
+            let user = JSON.parse(localStorage.getItem('udata'));
+            let Cdata = JSON.parse(localStorage.getItem('logCdata'));
             console.log(Cdata.licenceNo);
             setuserdata(user);
             var date = Date.now;
@@ -61,7 +61,7 @@ function Contractorpage() {
         }
     }, [])
     let Logout = () => {
-        sessionStorage.clear();
+        localStorage.clear();
         history1.replace("/");
         Swal.fire({ title: "Successfully logged Out", icon: 'success' });
 
@@ -69,8 +69,8 @@ function Contractorpage() {
     }
     let name;
     let role;
-    if (sessionStorage.getItem("udata") !== null) {
-        let l = JSON.parse(sessionStorage.getItem("udata"));
+    if (localStorage.getItem("udata") !== null) {
+        let l = JSON.parse(localStorage.getItem("udata"));
         name = l.userName;
         role = l.role;
     }

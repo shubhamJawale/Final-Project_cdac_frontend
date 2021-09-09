@@ -9,7 +9,7 @@ export default function AddBidding() {
     let [userdata, setuserdata] = useState({});
     let [uid, setuid] = useState();
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
         //console.log(user.role);
         if (user === null) {
             history.replace("/");
@@ -18,7 +18,7 @@ export default function AddBidding() {
         } setuserdata(user);
         return () => {
 
-
+            localStorage
         };
     }, []);
 
@@ -40,8 +40,8 @@ export default function AddBidding() {
 
 
     let addwork = () => {
-        let workId = JSON.parse(sessionStorage.getItem("abworkId"));
-        let contdata = JSON.parse(sessionStorage.getItem("logCdata"));
+        let workId = JSON.parse(localStorage.getItem("abworkId"));
+        let contdata = JSON.parse(localStorage.getItem("logCdata"));
         let contId = contdata.contractorId;
 
 

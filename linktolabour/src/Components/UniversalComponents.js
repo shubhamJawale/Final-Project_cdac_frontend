@@ -12,7 +12,7 @@ export default function ShowCReview() {
     let [userdata, setuserdata] = useState({});
     let [reviewList, setreviewList] = useState([{}]);
     useEffect(() => {
-        let user = JSON.parse(sessionStorage.getItem("udata"));
+        let user = JSON.parse(localStorage.getItem("udata"));
 
         //console.log(user.role);
         if (user === null) {
@@ -28,12 +28,12 @@ export default function ShowCReview() {
     }, []);
 
     let getContractors = () => {
-        let user1 = JSON.parse(sessionStorage.getItem("udata"));
+        let user1 = JSON.parse(localStorage.getItem("udata"));
         console.log(user1);
         let role1 = user1.role;
         if (role1 == "USER") {
             console.log(role1);
-            let id = JSON.parse(sessionStorage.getItem("logId"));
+            let id = JSON.parse(localStorage.getItem("logId"));
             axios.get(`${baseurl}/user/getreviewbyuserid/${id}`).then((response) => {
                 setreviewList(response.data);
                 toast.success("Contracotr Data Loaded Successfully");
@@ -45,7 +45,7 @@ export default function ShowCReview() {
         }
         else if (role1 == "LABOUR") {
             console.log(role1);
-            let l = JSON.parse(sessionStorage.getItem("logLdata"));
+            let l = JSON.parse(localStorage.getItem("logLdata"));
             let id = l.labourId;
             axios.get(`${baseurl}/labour/getallreviewbylabourId/${id}`).then((response) => {
                 setreviewList(response.data);
@@ -58,7 +58,7 @@ export default function ShowCReview() {
         }
         else if (role1 === "CONTRACTOR") {
             console.log(role1);
-            let l = JSON.parse(sessionStorage.getItem("logCdata"));
+            let l = JSON.parse(localStorage.getItem("logCdata"));
             let id = l.contractorId;
             axios.get(`${baseurl}/labour/getallreviewbycontractorid/${id}`).then((response) => {
                 setreviewList(response.data);
