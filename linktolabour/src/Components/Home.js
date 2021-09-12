@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     BrowserRouter as Router,
     useHistory,
@@ -11,6 +11,34 @@ import './LogoHead.css';
 import Register from './UserComponents/registration comopnents/RegistrationForm';
 export const Home = () => {
     const history = useHistory();
+
+    useEffect(() => {
+        if (localStorage.getItem("udata") != null) {
+            let user = JSON.parse(localStorage.getItem("udata"));
+            let urole = user.role;
+
+            if (urole === 'USER') {
+                history.replace("/user");
+            }
+            else if (urole === 'CONTRACTOR') {
+                // history.replace("/contractor");
+                window.location = "/contractor";
+            }
+            else if (urole === 'LABOUR') {
+
+                history.replace("/labour");
+
+            }
+
+
+        } else {
+
+            history.replace("/");
+        }
+        return () => {
+
+        }
+    }, [])
 
     const gotoLogin = () => { history.push("/login"); }
     const gotoregister = () => { history.push("/register"); }

@@ -159,7 +159,7 @@ export default function UpdateUser() {
 
     return (
         <div>
-            <div className="col-12 offset-1 justify-content-center my-5">
+            <div className="col-12 offset-1 justify-content-center my-5" style={{ width: "90%", padding: "1%" }}>
 
                 <form className="form-control bg bg-info">
                     <lable htmlFor="UserName"> Enter Name</lable>

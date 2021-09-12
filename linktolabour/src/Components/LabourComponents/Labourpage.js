@@ -101,7 +101,7 @@ function Labourpage() {
                             <div className="col-3">
                                 <LabourNavbar />
                             </div>
-                            <div className="col-6">
+                            <div className="col-9" style={{ height: "100 %", marginTop: "3.4%" }}>
 
 
                                 <Route exact={true} path="/labour/showAvialableWorks" component={LShowAvailableWork} />

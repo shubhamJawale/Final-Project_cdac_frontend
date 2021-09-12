@@ -89,8 +89,8 @@ export default function Addwork() {
 
 
     return (
-        <div className=" col-8 offset-3 justify-content-center  my-5">
-            <form className="form-control bg bg-info"> <label htmlFor="title"> Title</label>
+        <div className=" col-8 ">
+            <form className="form-control bg bg-info f1"> <label htmlFor="title"> Title</label>
                 <input type="text" name="title" id="title" className="form-control" onChange={titleinp} value={title} />
                 <br />
                 <label htmlFor="description">Description</label>

@@ -59,11 +59,12 @@ export default function LicensnoForm() {
             "expiryDate": expdate
         }
 
+
         axios.post(`${baseurl}/contractor/updatecontractorProfessionalDetails/${users.userId}`, contractor).then((response) => {
             Swal.fire({
                 title: " Professional Details Updated", icon: "success"
             })
-
+            
             let cdata = JSON.stringify(contractor)
             localStorage.setItem('logCdata', cdata);
             history.push("/contractor");
@@ -76,12 +77,8 @@ export default function LicensnoForm() {
 
 
     return (
-        <div className="bg bg-dark container">
+        <div className="bg bg-dark container "  >
             <div>
-
-
-
-
             </div>
             <div className="text-center my-5">
                 <h1 className="labels pt-5"> Contractor Professional Information</h1>

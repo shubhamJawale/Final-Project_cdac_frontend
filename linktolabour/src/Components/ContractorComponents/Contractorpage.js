@@ -23,7 +23,8 @@ import ShowRequestList from './ShowcAllRequests';
 function Contractorpage() {
     const history1 = useHistory();
     let [userdata, setuserdata] = useState();
-
+    let lcdate;
+    let date1;
     useEffect(() => {
         if ((localStorage.length === 0) || localStorage.getItem("logCdata") === null) {
             history1.replace("/");
@@ -32,6 +33,9 @@ function Contractorpage() {
             let user = JSON.parse(localStorage.getItem('udata'));
             let Cdata = JSON.parse(localStorage.getItem('logCdata'));
             console.log(Cdata.licenceNo);
+            date1 = new Date();
+            lcdate = new Date(Cdata.expiryDate);
+            console.log(date1 + " " + lcdate);
             setuserdata(user);
             var date = Date.now;
             if (user === null) {
@@ -45,13 +49,13 @@ function Contractorpage() {
                 history1.push("/contractor/addLicenseNo");
             }
 
-            /* else if (Cdata.expiryDate < date) {
-    
+            else if (lcdate < date1) {
+
                 Swal.fire({ title: "License Expired", icon: "warning" });
                 history1.push("/contractor/addLicenseNo");
-    
-    
-            } */
+
+
+            }
             else {
                 history1.push("/contractor");
             }
@@ -99,7 +103,7 @@ function Contractorpage() {
                         <div className="col-3">
                             <ContractorNavBar />
                         </div>
-                        <div className="col-6">
+                        <div className="col-9" style={{ height: "100 %", marginTop: "3.4%" }}>
                             <Route exact={true} path="/contractor/addLicenseNo" component={LicensnoForm} />
                             <Route exact={true} path="/contractor/ShowRecentWork" component={ShowAvailableWork} />
                             <Route exact={true} path="/contractor/addBidding" component={AddBidding} />

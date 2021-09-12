@@ -35,17 +35,17 @@ code {
   position:fixed;
   height: 100%;
   display: flexbox;
+  margin-top:3.5%;
  
  
- 
-  background-color:grey ;
+  background-color:white ;
   color: white;
 
 
 
 }
 
-li
+/* li
 {
   margin:2%;
   size:auto;
@@ -55,18 +55,28 @@ li
   text-decoration: none;
   background-color: #F720A1 ;
   color: white;
-  box-shadow: 2px 3px 2px gray;
+ 
+  box-shadow: 5px 5px 5px teal,
+  -3px, -3px, -3px white;
 
-}
+
+}*/
 ul
 {
   justify-content: center;
   text-align: center;
-  margin-right: 2%;
-  display: flexbox;
+ 
+  display:flexbox;
   
-  color: aliceblue;
-}
+ 
+ /* width:max-content;
+  margin-top: 8%;
+  height: 90%;
+*/  
+  
+  
+ 
+}/*
 .mynav.ul.li.Link
 {
   color: aliceblue;
@@ -76,7 +86,7 @@ li :hover
 {
   background-color: #F720A1 ;
 }
-
+ */
 label{
   color: white;
 }
@@ -84,4 +94,73 @@ label{
 .UpperBar
 {
   position: sticky;
+  box-shadow: 6px 6px 6px grey;
+  padding: 0.4%;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  background-color:blanchedalmond;
+  background-size: cover;
+  display: flex;
+  flex:auto;
+  color: brown;
+  
+}
+
+
+.navitem{
+  background-color: #F720A1 ;
+  padding: 5%;
+  margin-left: 5%;
+  margin-right: 6%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid white;
+  color: white;
+  box-shadow: 6px 10px 10px gray;
+  margin-top: 5%;
+
+}
+
+.navitem:hover{
+  background-color: white ;
+  padding: 5%;
+  margin: 5%;
+  display: flexbox;
+  border: 1px solid #F720A1 ;
+  color: #F720A1;
+  box-shadow: 6px 10px 10px #F720A1;
+  
+  
+}
+.navitem:active{
+  background-color: white ;
+  padding: 5%;
+  margin: 5%;
+  display: flexbox;
+  border: 1px solid #F720A1 ;
+  color: #F720A1;
+  box-shadow: 7px 6px 6px #F720A1;
+  
+  
+}
+li
+{
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  margin-top: 7%;
+}
+
+.f1{
+
+  width: 50%;
+  display: flex;
+  box-shadow: 3px 6px 15px orange;
+  margin-left: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 10%;
+
 }

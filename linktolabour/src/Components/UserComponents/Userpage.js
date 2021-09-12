@@ -64,7 +64,7 @@ function Userpage() {
     //ShowBidding
     return (
         <div>
-            <div className="row col-12 UpperBar bg bg-warning">
+            <div className="UpperBar " >
                 <div className="col-3" >
                     <h4>LINK TO LABOUR</h4>
                 </div>
@@ -84,7 +84,7 @@ function Userpage() {
                         <div className="col-3">
                             <UserNavbar />
                         </div>
-                        <div className="col-6">
+                        <div className="col-9" style={{ height: "100 %", marginTop: "3.4%" }}>
 
                             <Route exact={true} path="/user/addwork" component={Addwork} />
                             <Route exact={true} path="/user/getcontractor" component={ShowContractors} />
