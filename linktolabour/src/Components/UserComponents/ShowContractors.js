@@ -46,7 +46,7 @@ export default function ShowContractors() {
         <div>{
             usercontractorlist.map((userset) => {
                 return (
-                    <Card key="{userset.userId}" color="info" inverse className="m-1 justify-content-center text-center">
+                    <Card key="{userset.userId}" color="info" inverse className="m-1 f1">
                         <CardHeader>
                             <CardTitle tag="h5" >{userset.userName}</CardTitle>
                         </CardHeader>

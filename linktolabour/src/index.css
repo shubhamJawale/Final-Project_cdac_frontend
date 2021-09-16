@@ -124,17 +124,23 @@ label{
 }
 
 .navitem:hover{
+ /*  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%; */
+  /* border-bottom-right-radius: 35%; */
+  /* border-top-right-radius: 50%;
+  border-right-style: 1px groove #F720A1; */
   background-color: white ;
   padding: 5%;
   margin: 5%;
   display: flexbox;
   border: 1px solid #F720A1 ;
   color: #F720A1;
-  box-shadow: 6px 10px 10px #F720A1;
+  box-shadow: 6px 10px 10px #F720A1 ;
   
   
 }
 .navitem:active{
+  
   background-color: white ;
   padding: 5%;
   margin: 5%;

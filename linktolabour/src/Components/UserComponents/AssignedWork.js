@@ -88,12 +88,12 @@ export default function AssignedWork() {
 
     return (
         <div>
-            <ToastContainer />
+
             {
                 assignworklist.map((workset) => {
                     return (
                         (workset.astatus === "COMPLETED")
-                            ? <Card key="{workset.assignedWorkId}" color="success" inverse className="m-1 justify-content-center text-center">
+                            ? <Card key="{workset.assignedWorkId}" color="success" inverse className="m-1 f1">
                                 <CardHeader>
                                     <CardTitle tag="h5" >{workset.title}</CardTitle>
 
@@ -108,7 +108,7 @@ export default function AssignedWork() {
                                     <CardText>Status :{workset.astatus}</CardText>
                                     {(workset.astatus === "ONGOING") ? < CardFooter > <input type="button" className="btn btn-outline-warning" value="Marked It As Complete" id={workset.assignedWorkId} onClick={() => updateStauts(workset.assignedWorkId, workset.contractorId, workset.labourId, workset.uid)} /></CardFooter> : <h5>Completed</h5>}
                                 </CardBody>
-                            </Card> : <Card key="{workset.assignedWorkId}" color="info" inverse className="m-1 justify-content-center text-center">
+                            </Card> : <Card key="{workset.assignedWorkId}" color="info" inverse className="m-1 f1">
                                 <CardHeader>
                                     <CardTitle tag="h5" >{workset.title}</CardTitle>
 

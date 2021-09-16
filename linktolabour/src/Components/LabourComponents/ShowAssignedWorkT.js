@@ -62,7 +62,7 @@ export default function LAssignedWorkListForContractor() {
 
     return (
         <div>
-            <ToastContainer />
+
             {
                 assignworklist.map((workset) => {
                     return (

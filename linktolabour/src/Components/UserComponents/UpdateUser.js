@@ -159,9 +159,9 @@ export default function UpdateUser() {
 
     return (
         <div>
-            <div className="col-12 offset-1 justify-content-center my-5" style={{ width: "90%", padding: "1%" }}>
+            <div className="col-12 " style={{ width: "70%", padding: "1%" }}>
 
-                <form className="form-control bg bg-info">
+                <form className="form-control bg bg-info f1">
                     <lable htmlFor="UserName"> Enter Name</lable>
                     <input className="form-control" type="text" name="UserName" id="UserName" onChange={usernameinput} value={username}></input>
                     <lable htmlFor="EmailId"> Enter EmailId</lable>

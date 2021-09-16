@@ -74,7 +74,7 @@ export default function LShowAvailableWork() {
 
     return (
         <div>
-            <ToastContainer />
+
             {
                 assignworklist.map((workset) => {
                     return (

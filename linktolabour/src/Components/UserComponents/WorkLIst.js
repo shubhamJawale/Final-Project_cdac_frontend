@@ -64,7 +64,7 @@ export default function WorkList() {
         <div>{
             usercontractorlist.map((userset) => {
                 return (
-                    (userset.status === "COMPLETED") ? <Card key="{userset.userId}" color="success" inverse className="m-1 justify-content-center text-center">
+                    (userset.status === "COMPLETED") ? <Card key="{userset.userId}" color="success" inverse className="f1 m-1 justify-content-center text-center">
                         <CardHeader>
                             <CardTitle tag="h5" >{userset.title}</CardTitle>
                         </CardHeader>
@@ -81,7 +81,7 @@ export default function WorkList() {
                                 < input type="button" onClick={() => showBidding(userset.workId)} value="View Biddings" /> : <h1></h1>
                             }
                         </CardBody>
-                    </Card> : <Card key="{userset.userId}" color="info" inverse className="m-1 justify-content-center text-center">
+                    </Card> : <Card key="{userset.userId}" color="info" inverse className="m-1  f1">
                         <CardHeader>
                             <CardTitle tag="h5" >{userset.title}</CardTitle>
                         </CardHeader>
